@@ -1,10 +1,5 @@
 package cl.utem.vote.feeling.manager;
 
-import java.io.Serializable;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import cl.utem.vote.feeling.api.vo.TokenVO;
 import cl.utem.vote.feeling.exception.AuthException;
 import cl.utem.vote.feeling.exception.UtemException;
@@ -18,13 +13,18 @@ import cl.utem.vote.feeling.persistence.repository.UserRepository;
 import cl.utem.vote.feeling.utils.JwtUtils;
 import cl.utem.vote.feeling.utils.UrlUtils;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
+import java.io.Serializable;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ApiManager implements Serializable {

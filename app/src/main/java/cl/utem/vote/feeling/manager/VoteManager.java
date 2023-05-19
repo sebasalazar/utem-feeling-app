@@ -6,19 +6,19 @@ import cl.utem.vote.feeling.persistence.model.Section;
 import cl.utem.vote.feeling.persistence.model.User;
 import cl.utem.vote.feeling.persistence.model.Vote;
 import cl.utem.vote.feeling.persistence.model.Voter;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import cl.utem.vote.feeling.persistence.repository.SectionRepository;
 import cl.utem.vote.feeling.persistence.repository.VoteRepository;
 import cl.utem.vote.feeling.persistence.repository.VoterRepository;
-import java.time.OffsetDateTime;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.transaction.annotation.Transactional;
-import cl.utem.vote.feeling.persistence.repository.SectionRepository;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
