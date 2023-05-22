@@ -94,7 +94,7 @@ public class VoteManager implements Serializable {
             for (Vote vote : votes) {
                 sum += vote.getChoice();
             }
-            avg = sum / total;
+            avg = sum / ((double) total);
             votes.clear();
         }
         return new CountVO(avg, total);

@@ -40,7 +40,7 @@ public class UrlUtils implements Serializable {
             uri = new URI(url);
         } catch (Exception e) {
             uri = null;
-            LOGGER.error("Error al construir URI: {}", e.getMessage());
+            LOGGER.error("Error al construir URI: {}", e.getLocalizedMessage());
             LOGGER.debug("Error al construir URI: {}", e.getMessage(), e);
         }
         return uri;
@@ -60,8 +60,8 @@ public class UrlUtils implements Serializable {
                     oldUri.getPath(), newQuery, oldUri.getFragment());
         } catch (Exception e) {
             uri = null;
-            LOGGER.error("Error al construir URI: {}", e.getMessage());
-            LOGGER.debug("Error al construir URI: {}", e.getMessage(), e);
+            LOGGER.error("Error al agregar datos a la URI: {}", e.getLocalizedMessage());
+            LOGGER.debug("Error al agregar datos a la URI: {}", e.getMessage(), e);
         }
         return uri;
     }

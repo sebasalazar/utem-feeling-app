@@ -2,7 +2,7 @@ package cl.utem.vote.feeling.exception;
 
 public class UtemException extends RuntimeException {
 
-    private int code = 412;
+    private final int code;
 
     public UtemException() {
         super("Error al procesar");
@@ -19,7 +19,7 @@ public class UtemException extends RuntimeException {
         this.code = code;
     }
 
-    public Integer getCode() {
+    public int getCode() {
         return code;
     }
 }

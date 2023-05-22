@@ -1,6 +1,5 @@
 package cl.utem.vote.feeling.utils;
 
-import cl.utem.vote.feeling.api.vo.GoogleResponseVO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -18,9 +17,6 @@ public class JwtUtils implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /// Datos para realizar firmas
-    private static final String AUD = "UTEM";
-
     public static final ObjectMapper MAPPER;
 
     /**
@@ -33,20 +29,6 @@ public class JwtUtils implements Serializable {
     }
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtUtils.class);
-
-    public static GoogleResponseVO getGoogleResponse(final String json) {
-        GoogleResponseVO vo = null;
-        try {
-            if (StringUtils.isNotBlank(json)) {
-                vo = JwtUtils.MAPPER.readValue(json, GoogleResponseVO.class);
-            }
-        } catch (Exception e) {
-            vo = null;
-            LOGGER.error("Error al procesar respuesta: {}", e.getMessage());
-            LOGGER.trace("Error al procesar respuesta: {}", e.getMessage(), e);
-        }
-        return vo;
-    }
 
     public static GoogleIdToken getGoogleIdToken(final String clientId, final String idTokenJwt) {
         GoogleIdToken decoded = null;
