@@ -13,11 +13,22 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class CourseVO extends Utem {
 
+    @Schema(description = "Token identificador de la sección", example = "2a94bea0-2b58-49f0-a4cd-5f41d454406d", requiredMode = Schema.RequiredMode.REQUIRED)
     private String token = null;
+
+    @Schema(description = "Código del curso", example = "INFB8090", requiredMode = Schema.RequiredMode.REQUIRED)
     private String code = null;
+
+    @Schema(description = "Nombre del curso", example = "COMPUTACIÓN PARALELA Y DISTRIBUIDA", requiredMode = Schema.RequiredMode.REQUIRED)
     private String name = null;
+
+    @Schema(description = "Semestre en que se impartió el curso", example = "1", requiredMode = Schema.RequiredMode.REQUIRED)
     private Integer semester = null;
+
+    @Schema(description = "Año en que se impartió el curso", example = "2023", requiredMode = Schema.RequiredMode.REQUIRED)
     private Integer year = null;
+
+    @Schema(description = "Flag que indica si el curso está activo en este momento", example = "true", allowableValues = {"true", "false"}, requiredMode = Schema.RequiredMode.REQUIRED)
     private boolean active = false;
 
     public CourseVO() {
