@@ -7,18 +7,20 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import org.apache.commons.lang3.StringUtils;
 
+@Schema(name = "Response")
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class ResponseVO extends Utem {
 
     private static final long serialVersionUID = 1L;
 
-    @Schema(description = "Flag que indica el estado de éxito", example = "true", allowableValues = {"true", "false"})
+    @Schema(description = "Flag que indica el estado de éxito", example = "true",
+            allowableValues = {"true", "false"}, requiredMode = Schema.RequiredMode.REQUIRED)
     private boolean ok = false;
 
-    @Schema(description = "Mensaje de respuesta")
+    @Schema(description = "Mensaje de respuesta", requiredMode = Schema.RequiredMode.REQUIRED, example = "Procesado Exitosamente")
     private String message = null;
 
-    @Schema(description = "Fecha de creación de la respuesta")
+    @Schema(description = "Fecha de creación de la respuesta", requiredMode = Schema.RequiredMode.REQUIRED)
     private OffsetDateTime created = OffsetDateTime.now(ZoneOffset.UTC);
 
     public ResponseVO() {
