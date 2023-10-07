@@ -62,4 +62,18 @@ INSERT INTO subjects (code, name) VALUES ('INFB8090','COMPUTACIÓN PARALELA Y DI
 INSERT INTO sections (token, subject_fk, semester, year, active) VALUES ('2a94bea0-2b58-49f0-a4cd-5f41d454406d','1','1','2023','1');
 INSERT INTO courses (section_fk, user_fk) SELECT 1 AS section_fk, pk AS user_fk FROM users;
 
+INSERT INTO subjects (code, name) VALUES ('INF69800','TRABAJO DE TITULACION I');
+INSERT INTO sections (token, subject_fk, semester, year, active) VALUES ('9f2faf68-f2ee-4512-bbb7-cccb7db4dcba','2','1','2023','1');
+INSERT INTO courses (section_fk, user_fk) SELECT 2 AS section_fk, pk AS user_fk FROM users;
+
+INSERT INTO subjects (code, name) VALUES ('INF69900','TRABAJO DE TITULACION II');
+INSERT INTO sections (token, subject_fk, semester, year, active) VALUES ('3501be7e-77e0-4001-bcbb-47ad8cbb3475','3','1','2023','1');
+INSERT INTO courses (section_fk, user_fk) SELECT 3 AS section_fk, pk AS user_fk FROM users;
+
+INSERT INTO subjects (code, name) VALUES ('INF76300','SISTEMAS DISTRIBUIDOS');
+INSERT INTO sections (token, subject_fk, semester, year, active) VALUES ('85fb5928-f494-4f2a-9d1d-892f7ed16f33','4','1','2023','1');
+INSERT INTO courses (section_fk, user_fk) SELECT 4 AS section_fk, pk AS user_fk FROM users;
+
+
+
 COMMIT;
